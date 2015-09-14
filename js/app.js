@@ -1,11 +1,9 @@
 var pouch = new PouchDB('testdb', {adapter: 'fruitdown'});
 
-var list = document.getElementById('items');
-
 function addItemToList(item) {
     var li = document.createElement("li");
     li.innerHTML = item;
-    list.appendChild(li);
+    document.getElementById('items').appendChild(li);
 }
 
 pouch.allDocs({include_docs: true}).then(function (results) {
